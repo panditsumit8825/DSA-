@@ -194,7 +194,7 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<"Sumit Kumar";
-    cout<<"noida electronic";
+    cout<<"noida electroni";
     
     
 
