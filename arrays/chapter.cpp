@@ -193,10 +193,7 @@ int main(){
     {
         cout<<arr[i]<<" ";
     }
-    cout<<"Sumit Kumar";
-    cout<<"noida electronic city";
-    cout<<"Vikash Kumar";
-    cout<<"Deepak Kumar";
+ 
     
     
 
