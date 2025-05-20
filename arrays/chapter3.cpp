@@ -1,24 +1,43 @@
 #include<iostream>
+#include<vector>
+#include<limits.h>
 using namespace std;
 int main(){
-    // 2d array
+    int rows=3;
+    int cols=3;
     int arr[3][3];
-    // initialize 
-    int brr[3][3]={{1,2,3},{4,5,6},{7,8,9}};
-    // cout<<brr[1][0]<<endl;
-    // row-wise print
-    // outer loop
-    for (int i = 0; i < 3; i++)
+    int brr[3][3]={{1,2,3},{4,5,6},{6,7,8}};
+    // for (int i = 0; i < rows; i++)
+    // {
+    //     for (int j = 0; j < cols; j++)
+    //     {
+    //         cin>>arr[i][j];
+    //     }
+    // }
+    // cout<<endl;
+    // cout<<"Printing arrays"<<endl;
+    // for (int i = 0; i < rows; i++)
+    // {
+    //     for (int j = 0; j < cols; j++)
+    //     {
+    //         cout<<brr[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+    // cout<<endl;
+    cout<<"Printing arrays"<<endl;
+    for (int i = 0; i < rows; i++)
     {
-        // print value of column for each row
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < cols; j++)
         {
-            cout<<brr[i][j]<<" ";
+            cout<<brr[j][i]<<" ";
         }
         cout<<endl;
-        
     }
+    cout<<endl;
     
+    
+
 
 
     return 0;
