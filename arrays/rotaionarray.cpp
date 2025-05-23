@@ -37,32 +37,71 @@
 // }
 
 // shifting zeros to right side of array
-#include<iostream>
-using namespace  std;
+// #include<iostream>
+// using namespace  std;
 
-void moveZerosToRight(int*a,int n){
-    int l=0,h=n-1;
-    while(l<h){
-        if (a[l]<1)
-        {
-            swap(a[l],a[h]);
-            l++;
-            h--;
-        }
-        else{
-            l++;
-        }
+// void moveZerosToRight(int*a,int n){
+//     int l=0,h=n-1;
+//     while(l<h){
+//         if (a[l]<1)
+//         {
+//             swap(a[l],a[h]);
+//             l++;
+//             h--;
+//         }
+//         else{
+//             l++;
+//         }
         
-    }
+//     }
+// }
+// int main(){
+//     int a[]={0,1,0,3,12};
+//     int n=sizeof(a)/sizeof(int);
+//     moveZerosToRight(a,n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout<<a[i]<<" ";
+//     }
+//     cout<<endl;
+//     return 0 ;
+// }
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// comp function to perform sorting
+bool comp(const string &left, const string &right)
+{
+    if (left.size() == right.size())
+        return left < right;
+
+    else
+        return left.size() < right.size();
 }
-int main(){
-    int a[]={0,1,0,3,12};
-    int n=sizeof(a)/sizeof(int);
-    moveZerosToRight(a,n);
-    for (int i = 0; i < n; i++)
-    {
-        cout<<a[i]<<" ";
-    }
-    cout<<endl;
-    return 0 ;
+
+
+vector<string> SortingBigIntegers(vector<string> &arr)
+{
+    vector<string> sortArr(arr.begin(), arr.end());
+
+    // Inbuilt sort function using function as comp
+    sort(sortArr.begin(), sortArr.end(), comp);
+
+    return sortArr;
+}
+
+// Driver code of above implementation
+int main()
+{
+    vector<string> arr = {"54", "724523015759812365462",
+                    "870112101220845", "8723"};
+    
+    vector<string> sortArr = SortingBigIntegers(arr);
+    
+    for (auto &ele : sortArr)
+        cout << ele << " ";
+        
+    return 0;
 }
