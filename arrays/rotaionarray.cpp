@@ -106,27 +106,62 @@
 //     return 0;
 // }
 
+// #include<bits/stdc++.h>
+
+// using namespace std;
+
+// int main() {
+//   int num = 15;
+//   int a = 0, b = 1;
+
+//   // Here we are printing 0th and 1st terms
+//   cout << a << ", " << b << ", ";
+
+//   int nextTerm;
+
+//   // printing the rest of the terms here
+//   for (int i = 2; i < num; i++) {
+//     nextTerm = a + b;
+//     a = b;
+//     b = nextTerm;
+
+//     cout << nextTerm << ", ";
+//   }
+
+//   return 0;
+// }
+
 #include<bits/stdc++.h>
 
 using namespace std;
-
+// Recursive function declaration
+int findGCD(int, int);
+// main program
 int main() {
-  int num = 15;
-  int a = 0, b = 1;
-
-  // Here we are printing 0th and 1st terms
-  cout << a << ", " << b << ", ";
-
-  int nextTerm;
-
-  // printing the rest of the terms here
-  for (int i = 2; i < num; i++) {
-    nextTerm = a + b;
-    a = b;
-    b = nextTerm;
-
-    cout << nextTerm << ", ";
-  }
-
+  int first, second;
+  cout << "Enter First Number: ";
+  cin >> first;
+  cout << "Enter second Number: ";
+  cin >> second;
+  cout << "GCD of " << first << " and " << second << " is " << findGCD(first, second);
   return 0;
+}
+//body of the function
+int findGCD(int first, int second) {
+  // 0 is divisible by every number
+  if (first == 0) {
+    return second;
+  }
+  if (second == 0) {
+    return first;
+  }
+  // both numbers are equal
+  if (first == second) {
+    return first;
+  }
+  // first is greater
+  else if (first > second) {
+    return findGCD(first - second, second);
+  }
+  return findGCD(first, second - first);
 }
