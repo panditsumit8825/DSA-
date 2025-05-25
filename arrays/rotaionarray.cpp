@@ -131,37 +131,68 @@
 //   return 0;
 // }
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
 
+// using namespace std;
+// // Recursive function declaration
+// int findGCD(int, int);
+// // main program
+// int main() {
+//   int first, second;
+//   cout << "Enter First Number: ";
+//   cin >> first;
+//   cout << "Enter second Number: ";
+//   cin >> second;
+//   cout << "GCD of " << first << " and " << second << " is " << findGCD(first, second);
+//   return 0;
+// }
+// //body of the function
+// int findGCD(int first, int second) {
+//   // 0 is divisible by every number
+//   if (first == 0) {
+//     return second;
+//   }
+//   if (second == 0) {
+//     return first;
+//   }
+//   // both numbers are equal
+//   if (first == second) {
+//     return first;
+//   }
+//   // first is greater
+//   else if (first > second) {
+//     return findGCD(first - second, second);
+//   }
+//   return findGCD(first, second - first);
+// }
+
+
+#include <iostream>
 using namespace std;
-// Recursive function declaration
-int findGCD(int, int);
-// main program
-int main() {
-  int first, second;
-  cout << "Enter First Number: ";
-  cin >> first;
-  cout << "Enter second Number: ";
-  cin >> second;
-  cout << "GCD of " << first << " and " << second << " is " << findGCD(first, second);
-  return 0;
+
+// Function to check Palindrome
+bool checkPalindrome(int n)
+{
+    int ans = 0;
+    int temp = n;
+    while (temp != 0) {
+        ans = (ans * 10) + (temp % 10);
+        temp = temp / 10;
+    }
+
+    return (ans == n);
 }
-//body of the function
-int findGCD(int first, int second) {
-  // 0 is divisible by every number
-  if (first == 0) {
-    return second;
-  }
-  if (second == 0) {
-    return first;
-  }
-  // both numbers are equal
-  if (first == second) {
-    return first;
-  }
-  // first is greater
-  else if (first > second) {
-    return findGCD(first - second, second);
-  }
-  return findGCD(first, second - first);
+
+int main()
+{
+    int n = 12321;
+
+    if (checkPalindrome(n) == 1) {
+        cout << "Yes\n";
+    }
+    else {
+        cout << "No\n";
+    }
+
+    return 0;
 }
