@@ -167,32 +167,59 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+
+// // Function to check Palindrome
+// bool checkPalindrome(int n)
+// {
+//     int ans = 0;
+//     int temp = n;
+//     while (temp != 0) {
+//         ans = (ans * 10) + (temp % 10);
+//         temp = temp / 10;
+//     }
+
+//     return (ans == n);
+// }
+
+// int main()
+// {
+//     int n = 12321;
+
+//     if (checkPalindrome(n) == 1) {
+//         cout << "Yes\n";
+//     }
+//     else {
+//         cout << "No\n";
+//     }
+
+//     return 0;
+// }
+
+
 #include <iostream>
 using namespace std;
 
-// Function to check Palindrome
-bool checkPalindrome(int n)
+int fib(int n)
 {
-    int ans = 0;
-    int temp = n;
-    while (temp != 0) {
-        ans = (ans * 10) + (temp % 10);
-        temp = temp / 10;
+    int first = 0, second = 1, ans;
+    if (n == 0)
+        return first;
+
+    for (int i = 2; i <= n; i++) {
+        ans = first + second;
+        first = second;
+        second = ans;
     }
 
-    return (ans == n);
+    return ans;
 }
 
 int main()
 {
-    int n = 12321;
+    int n = 13;
 
-    if (checkPalindrome(n) == 1) {
-        cout << "Yes\n";
-    }
-    else {
-        cout << "No\n";
-    }
-
+    cout << fib(n);
     return 0;
 }
