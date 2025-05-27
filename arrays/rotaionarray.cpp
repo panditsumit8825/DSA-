@@ -198,28 +198,77 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+
+// int fib(int n)
+// {
+//     int first = 0, second = 1, ans;
+//     if (n == 0)
+//         return first;
+
+//     for (int i = 2; i <= n; i++) {
+//         ans = first + second;
+//         first = second;
+//         second = ans;
+//     }
+
+//     return ans;
+// }
+
+// int main()
+// {
+//     int n = 13;
+
+//     cout << fib(n);
+//     return 0;
+// }
+
+
+// C++ Program to print whether a character is vowel or not
+// #include <cctype>
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     char ch = 'e';
+
+//     if (isalpha(ch)) {
+//         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o'
+//             || ch == 'u' || ch == 'A' || ch == 'E'
+//             || ch == 'I' || ch == 'O' || ch == 'U') {
+//             cout << ch << " is a vowel." << endl;
+//         }
+//         else {
+//             cout << ch << " is a consonant." << endl;
+//         }
+//     }
+//     else {
+//         cout << ch << " is not an alphabet." << endl;
+//     }
+
+//     return 0;
+// }
+
+
+// C++ Program to find the length of a string without using
+// strlen()
+#include <cstring>
 #include <iostream>
 using namespace std;
 
-int fib(int n)
-{
-    int first = 0, second = 1, ans;
-    if (n == 0)
-        return first;
-
-    for (int i = 2; i <= n; i++) {
-        ans = first + second;
-        first = second;
-        second = ans;
-    }
-
-    return ans;
-}
-
 int main()
 {
-    int n = 13;
+    string str = "GeeksforGeeks";
+    int length = 0;
 
-    cout << fib(n);
+    for (int i = 0; str[i] != '\0'; i++) {
+        length++;
+    }
+
+    cout << "The length of the string is: " << length
+         << endl;
+
     return 0;
 }
