@@ -2,7 +2,7 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-int movesZero(int arr[] , int n){
+void movesZero(int arr[] , int n){
     int index =0;
     for (int i= 0; i < n; i++)
     {
