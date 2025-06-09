@@ -1,22 +1,30 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
-int main() {
-    int k;
-    cout<<"Enter the number :";
-    cin>>k;
-    int arr[] ={1,2,3,4,5,6,7};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    num = n-k;
-    int temp[n];
-    for (int i = 0; i<=num; i++)
-    {
-        temp[i] = arr.pop_back(i); 
 
-for (int i = 0; i < k; i++)
-{
-    
+void leftRotate(int arr[], int n, int d) {
+   reverse(arr,arr+d);
+   reverse(arr+d, arr+n);
+   reverse(arr, arr+n);
 }
+int main() {
+    int n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i <n; i++)
+    {
+        cin>>arr[i];
+    }
+    int d;
+    cout << "Enter the number of rotations: ";
+    cin >> d;
+    leftRotate(arr, n, d);
+    for (int i = 0; i <n; i++)
+    {
+        cout << arr[i] << " ";
     }
     
-    return 0;
+    
+return 0;
 }
