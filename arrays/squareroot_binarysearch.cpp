@@ -28,6 +28,20 @@ int main(){
     // int findSquareroot (n);
     int ans = findSquareroot(n);
     cout << "The square root of " << n << " is approximately: " << ans << endl;
+    int precision ;
+    cout << "Enter the precision for the square root: ";
+    cin >> precision;
+    double step=0.1;
+    double finalans = ans;
+    for (int i = 0; i < precision; i++)
+    {
+        for (double j = finalans; j*j<=n; j=j+step)
+        {
+            finalans =j;
+        }
+        step =step  / 10;
+    }
+    cout << "The square root of " << n << " is approximately: " << finalans << endl;
     return 0;
 
 }
